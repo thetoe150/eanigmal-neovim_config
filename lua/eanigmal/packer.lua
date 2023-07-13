@@ -61,6 +61,6 @@ return require('packer').startup(function(use)
 
 	use("folke/tokyonight.nvim")
 	use("EdenEast/nightfox.nvim")
-
+	use('mfussenegger/nvim-dap')
 
   end)
