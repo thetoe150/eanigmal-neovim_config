@@ -22,6 +22,6 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
+vim.api.nvim_cmd({cmd = "set", args = {"nofoldenable"}},{})
 
 vim.g.mapleader = " "
