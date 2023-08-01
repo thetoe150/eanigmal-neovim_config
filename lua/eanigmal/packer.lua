@@ -4,20 +4,13 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-	  use 'wbthomason/packer.nvim'
+	use 'wbthomason/packer.nvim'
 
-	  use {
+	use {
 		  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		  -- or                            , branch = '0.1.x',
 		  requires = { {'nvim-lua/plenary.nvim'} }
 	}
-
-	use({ 'rose-pine/neovim',
-		as = 'rose-pine',
-		config = function()
-			vim.cmd('colorscheme rose-pine')
-		end
-	})
 
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
@@ -30,6 +23,7 @@ return require('packer').startup(function(use)
         --{build = ':TSUpdate'}
     --)
 
+	-- lsp
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -59,8 +53,21 @@ return require('packer').startup(function(use)
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
 
-	use("folke/tokyonight.nvim")
-	use("EdenEast/nightfox.nvim")
+	-- debug
 	use('mfussenegger/nvim-dap')
+
+	-- theme
+	use({"folke/tokyonight.nvim",
+		as = "tokyonight",
+		config = function()
+			vim.cmd('colorscheme tokyonight-night')
+		end
+	})
+	use({
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	})
+	-- use("EdenEast/nightfox.nvim")
+	-- use({ 'rose-pine/neovim'})
 
   end)

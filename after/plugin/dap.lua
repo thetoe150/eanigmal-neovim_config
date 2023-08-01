@@ -51,7 +51,7 @@ local lldb = {
 
 dap.adapters.gdb = {
 	type = "executable",
-	command = "C:/Users/theto/.vscode/extensions/ms-vscode.cpptools-1.16.3-win32-x64/debugAdapters/bin/WindowsDebugLauncher.exe",
+	command = "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
 	name = "gdb",
 }
 
@@ -62,8 +62,7 @@ local gdb = {
 	program = function()
 		return vim.fn.input(
 		"Path to executable: ",
-		vim.fn.getcwd() .. "/bin/SLLsample.exe",
-		-- vim.fn.getcwd() .. "/bin/main.exe",
+		vim.fn.getcwd() .. "/bin/main.exe",
 		"file"
 		)
 	end,
@@ -75,7 +74,9 @@ local gdb = {
 
 dap.adapters.cppdb = {
 	type = "executable",
-	command = vim.fn.stdpath('data') .. '\\mason\\bin\\OpenDebugAD7',
+	command = vim.fn.stdpath('data') .. '/mason/bin/OpenDebugAD7.cmd',
+	--command = "C:/Users/theto/AppData/Local/nvim-data/mason/bin/OpenDebugAD7",
+	--command = "D:/OpenDebugAD7",
 	name = "cppdb",
 }
 
@@ -83,22 +84,24 @@ local cppdb = {
 	name = "Launch cppdb",
 	type = "cppdb",
 	request = "launch",
+	MIMode = 'gdb',
+
 	program = function()
 		return vim.fn.input(
-		"Path to executable: ",
-		vim.fn.getcwd() .. "/bin/SLLsample.exe",
+		"gdb: Path to executable: ",
+		vim.fn.getcwd() .. "/bin/main.exe",
 		-- vim.fn.getcwd() .. "/bin/main.exe",
 		"file"
 		)
 	end,
 	cwd = "${workspaceFolder}",
-	stopOnEntry = false,
+	stopOnEntry = true,
 	args = {},
 	runInTerminal = false,
 }
-require('dap').configurations.cpp = {
-	cppdb,
-	gdb
+dap.configurations.cpp = {
+	cppdb
 }
 
 dap.configurations.h = dap.configurations.cpp
+dap.configurations.hpp = dap.configurations.cpp
