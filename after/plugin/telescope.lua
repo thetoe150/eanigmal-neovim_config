@@ -7,3 +7,16 @@ vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]re
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
 
+require('telescope').setup{
+	defaults = {
+		mappings = {
+			n = {
+				['<leader>d'] = require('telescope.actions').delete_buffer
+			},
+
+			i = {
+				['<leader>d'] = require('telescope.actions').delete_buffer
+			}
+		}
+	}
+}
