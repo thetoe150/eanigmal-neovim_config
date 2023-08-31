@@ -1,14 +1,14 @@
 local todo = require("todo-comments")
 
-local opt = {
-  signs = true, -- show icons in the signs column
+require("todo-comments").setup{
+  signs = false, -- show icons in the signs column
   sign_priority = 8, -- sign priority
   -- list of named colors where we try to extract the guifg from the
   -- list of highlight groups or use the hex color if hl not found as a fallback
   colors = {
     error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
     warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-    info = { "DiagnosticInfo", "#008000" },
+    info = { "DiagnosticInfo", "#006400" },
     hint = { "DiagnosticHint", "#10B981" },
     default = { "Identifier", "#7C3AED" },
     test = { "Identifier", "#FF00FF" },
@@ -17,16 +17,16 @@ local opt = {
   keywords = {
     FIX = {
       icon = " ", -- icon used for the sign, and in search results
-      color = "error", -- can be a hex color, or a named color (see below)
+      color = "#AA0000", -- can be a hex color, or a named color (see below)
       alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
       -- signs = false, -- configure signs for some keywords individually
     },
-    TODO = { icon = " ", color = "hint" },
-    HACK = { icon = " ", color = "warning" },
-    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-    PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-    TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED", "DAMN" } },
+    TODO = { icon = "T", color = "#006400" },
+    NOTE = { icon = " ", color = "#006400", alt = { "INFO" } },
+    HACK = { icon = " ", color = "#AAAA33" },
+    WARN = { icon = "W", color = "#AAAA33", alt = { "WARNING", "XXX" } },
+    PERF = { icon = "P ", color = "#9400D3", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+    TEST = { icon = "⏲ ", color = "#9400D3", alt = { "TESTING", "PASSED", "FAILED", "DAMN" } },
   },
   gui_style = {
     fg = "NONE", -- The gui style to use for the fg highlight group.
@@ -42,7 +42,7 @@ local opt = {
     multiline_pattern = "^.", -- lua pattern to match the next multiline from the start of the matched keyword
     multiline_context = 10, -- extra lines that will be re-evaluated when changing a line
     before = "", -- "fg" or "bg" or empty
-    keyword = "wide", -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
+    keyword = "fg", -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
     after = "fg", -- "fg" or "bg" or empty
     pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlighting (vim regex)
     comments_only = true, -- uses treesitter to match keywords in comments only
@@ -65,7 +65,6 @@ local opt = {
   },
 }
 
-todo.setup{opt}
 
 vim.keymap.set("n", "]t", function()
   todo.jump_next()
