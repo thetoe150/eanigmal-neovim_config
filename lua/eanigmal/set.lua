@@ -18,7 +18,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 2
 vim.opt.signcolumn = "yes"
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "96"
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

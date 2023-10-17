@@ -7,6 +7,7 @@ vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
 vim.keymap.set("n", "zO", "zr")
 vim.keymap.set("n", "zC", "zm")
 
+-- reposition window --
 vim.keymap.set("n", "<C-Up>", ":resize -2 <CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2 <CR>", opts)
 vim.keymap.set("n", "<C-Right>", " : vertical resize +2 <CR>", opts)
@@ -14,8 +15,8 @@ vim.keymap.set("n", "<C-Left>", " : vertical resize -2 <CR>", opts)
 
 -- buffer --
 vim.keymap.set({"n", "v"}, "#", "<CS-6>", opts)
-vim.keymap.set({"n", "v"}, "^", ":bnext <CR>", opts)
-vim.keymap.set({"n", "v"}, "$", ":bprevious <CR>", opts)
+vim.keymap.set({"n", "v"}, "^", ":bprevious <CR>", opts)
+vim.keymap.set({"n", "v"}, "$", ":bnext <CR>", opts)
 -- vim.keymap.set({"n", "v"}, "^", ":enew <CR>", opts) -- new buffer in new file
 -- vim.keymap.set({"n", "v"}, "$", ":bd <CR>", opts) -- delete buffer
 
@@ -33,5 +34,11 @@ vim.keymap.set("v", "<A-j>", ":m .+1<CR>==", opts)
 vim.keymap.set("v", "<A-k>", ":m .-2<CR>==", opts)
 
 vim.keymap.set("v", "p", '"_dP', opts)
+
+-- Auto close bracket
+vim.keymap.set("i", "{", "{}<ESC>ha", opts);
+vim.keymap.set("i", "[", "[]<ESC>ha", opts);
+vim.keymap.set("i", "(", "()<ESC>ha", opts);
+vim.keymap.set("i", "<", "<><ESC>ha", opts);
 
 print("hello from eanigmal - remap file")

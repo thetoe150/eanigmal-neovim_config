@@ -21,10 +21,10 @@ require("todo-comments").setup{
       alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
       -- signs = false, -- configure signs for some keywords individually
     },
-    TODO = { icon = "T", color = "#006400" },
-    NOTE = { icon = " ", color = "#006400", alt = { "INFO" } },
-    HACK = { icon = " ", color = "#AAAA33" },
-    WARN = { icon = "W", color = "#AAAA33", alt = { "WARNING", "XXX" } },
+    TODO = { icon = "T", color = "#209420" },
+    NOTE = { icon = " ", color = "#209420", alt = { "INFO" } },
+    HACK = { icon = " ", color = "#BBBB33" },
+    WARN = { icon = "W", color = "#BBBB33", alt = { "WARNING", "XXX" } },
     PERF = { icon = "P ", color = "#9400D3", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     TEST = { icon = "⏲ ", color = "#9400D3", alt = { "TESTING", "PASSED", "FAILED", "DAMN" } },
   },
@@ -79,4 +79,3 @@ end, { desc = "Previous todo comment" })
 vim.keymap.set("n", "]t", function()
   todo.jump_next({keywords = { "ERROR", "WARNING" }})
 end, { desc = "Next error/warning todo comment" })
-
