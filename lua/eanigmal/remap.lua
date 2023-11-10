@@ -4,8 +4,8 @@ vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
 vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
 
 -- fold --
-vim.keymap.set("n", "zO", "zr")
-vim.keymap.set("n", "zC", "zm")
+vim.keymap.set("n", "zv", "zr")
+vim.keymap.set("n", "zb", "zm")
 
 -- reposition window --
 vim.keymap.set("n", "<C-Up>", ":resize -2 <CR>", opts)
@@ -41,6 +41,9 @@ vim.keymap.set("i", "[", "[]<ESC>ha", opts);
 vim.keymap.set("i", "(", "()<ESC>ha", opts);
 vim.keymap.set("i", "\"","\"\"<ESC>ha", opts);
 vim.keymap.set("i", "'", "''<ESC>ha", opts);
+
+-- change directory --
+vim.keymap.set({"n", "i"}, "<leader>cd", ":cd %:p:h")
 
 print("hello from eanigmal - remap file")
 
