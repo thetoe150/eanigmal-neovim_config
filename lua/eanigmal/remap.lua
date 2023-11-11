@@ -41,6 +41,3 @@ vim.keymap.set("i", "[", "[]<ESC>ha", opts);
 vim.keymap.set("i", "(", "()<ESC>ha", opts);
 vim.keymap.set("i", "\"","\"\"<ESC>ha", opts);
 vim.keymap.set("i", "'", "''<ESC>ha", opts);
-
-print("hello from eanigmal - remap file")
-

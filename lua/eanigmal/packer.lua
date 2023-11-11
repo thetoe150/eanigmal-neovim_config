@@ -14,13 +14,6 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
 
-    --use('nvim-treesitter/nvim-treesitter',
-        --{dependencies =
-          --'nvim-treesitter/nvim-treesitter-textobjects'
-        --},
-        --{build = ':TSUpdate'}
-    --)
-
 	-- lsp
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -43,7 +36,13 @@ return require('packer').startup(function(use)
     }
 }
 
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter',
+     {dependencies =
+		'nvim-treesitter/nvim-treesitter-textobjects'
+     },
+     {build = ':TSUpdate'}
+    )
+
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
 	use({
