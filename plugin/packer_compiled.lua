@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
