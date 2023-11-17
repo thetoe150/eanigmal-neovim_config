@@ -41,3 +41,13 @@ vim.keymap.set("i", "[", "[]<ESC>ha", opts);
 vim.keymap.set("i", "(", "()<ESC>ha", opts);
 vim.keymap.set("i", "\"","\"\"<ESC>ha", opts);
 vim.keymap.set("i", "'", "''<ESC>ha", opts);
+
+-- change directory
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", opts)
+
+-- copy to system clipboard
+vim.keymap.set("v", "<leader>y", "\"+y", opts)
+vim.keymap.set("n", "<leader>yy", "\"+yy", opts)
+
+-- yank from system clipboard
+vim.keymap.set("n", "<leader>p", "\"+p", opts)
