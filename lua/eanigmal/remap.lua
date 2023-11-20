@@ -42,8 +42,12 @@ vim.keymap.set("i", "(", "()<ESC>ha", opts);
 vim.keymap.set("i", "\"","\"\"<ESC>ha", opts);
 vim.keymap.set("i", "'", "''<ESC>ha", opts);
 
--- change directory --
-vim.keymap.set({"n", "i"}, "<leader>cd", ":cd %:p:h")
+-- change directory
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", opts)
 
-print("hello from eanigmal - remap file")
+-- copy to system clipboard
+vim.keymap.set("v", "<leader>y", "\"+y", opts)
+vim.keymap.set("n", "<leader>yy", "\"+yy", opts)
 
+-- yank from system clipboard
+vim.keymap.set("n", "<leader>p", "\"+p", opts)
