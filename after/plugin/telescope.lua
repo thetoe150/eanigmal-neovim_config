@@ -11,6 +11,8 @@ vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]re
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
 
+vim.keymap.set('n', '<leader>rg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+
 require('telescope').setup{
 	defaults = {
 		mappings = {
@@ -22,8 +24,8 @@ require('telescope').setup{
 				['<leader>d'] = require('telescope.actions').delete_buffer
 			}
 		},
-		file_ignore_patterns = {
-			"node_modules"
-		}
+		-- file_ignore_patterns = {
+		-- 	"node_modules"
+		-- }
 	}
 }

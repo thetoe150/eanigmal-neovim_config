@@ -1,7 +1,9 @@
 local opts = {noremap = true, silent = true}
-vim.keymap.set("n", "<leader>ef", vim.cmd.Ex)
-vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
+
+-- most used map --
 vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
+vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- fold --
 vim.keymap.set("n", "zv", "zr")

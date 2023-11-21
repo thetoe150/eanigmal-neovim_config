@@ -16,19 +16,26 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use {
-		  'nvim-telescope/telescope.nvim', tag = '0.1.4',
-		  requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
+		requires = {
+			{'nvim-lua/plenary.nvim'},
+			{ "nvim-telescope/telescope-live-grep-args.nvim" },
+		},
+		config = function()
+			require("telescope").load_extension("live_grep_args")
+		end
 	}
 
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
+	use('sindrets/diffview.nvim')
 
-    --use('nvim-treesitter/nvim-treesitter',
-        --{dependencies =
-          --'nvim-treesitter/nvim-treesitter-textobjects'
-        --},
-        --{build = ':TSUpdate'}rror executing lua [string ":source (no file)"]:5: module 'packer' not found:
-    --)
+    -- use('nvim-treesitter/nvim-treesitter',
+      --{dependencies =
+        --'nvim-treesitter/nvim-treesitter-textobjects'
+      --},
+      --{build = ':TSUpdate'}rror executing lua [string ":source (no file)"]:5: module 'packer' not found:
+    -- )
 
 	-- lsp
     use {
@@ -38,30 +45,30 @@ return require('packer').startup(function(use)
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
             {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+				'williamboman/mason.nvim',
+				run = function()
+					pcall(vim.cmd, 'MasonUpdate')
+				end,
+			},
+			{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-    }
-}
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},     -- Required
+			{'hrsh7th/cmp-nvim-lsp'}, -- Required
+			{'L3MON4D3/LuaSnip'},     -- Required
+		}
+	}
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function() vim.fn["mkdp#util#install"]() end,
-	})
+	-- use({
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	run = function() vim.fn["mkdp#util#install"]() end,
+	-- })
 
 	-- debug
-	use('mfussenegger/nvim-dap')
+	-- use('mfussenegger/nvim-dap')
 
 	-- theme
 	use({"folke/tokyonight.nvim",
