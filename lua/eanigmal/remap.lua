@@ -53,3 +53,6 @@ vim.keymap.set("n", "<leader>yy", "\"+yy", opts)
 
 -- yank from system clipboard
 vim.keymap.set("n", "<leader>p", "\"+p", opts)
+
+-- copy path of the current file to system clipboard
+vim.keymap.set("n", "<leader>cp", ":let @+ = expand(\"%:p\") <CR>", opts)
