@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "C:\\Users\\QUANG~1.TRA\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1694082368\\share\\lua\\5.1\\?.lua;C:\\Users\\QUANG~1.TRA\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1694082368\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\QUANG~1.TRA\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1694082368\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\QUANG~1.TRA\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1694082368\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
-local install_cpath_pattern = "C:\\Users\\QUANG~1.TRA\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1694082368\\lib\\lua\\5.1\\?.so"
+local package_path_str = "C:\\Users\\theto\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\share\\lua\\5.1\\?.lua;C:\\Users\\theto\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\theto\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\theto\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\theto\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -83,6 +83,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\quang.tranlenhat\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,

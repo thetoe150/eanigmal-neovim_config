@@ -22,13 +22,7 @@ return require('packer').startup(function(use)
 
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
-
-    --use('nvim-treesitter/nvim-treesitter',
-        --{dependencies =
-          --'nvim-treesitter/nvim-treesitter-textobjects'
-        --},
-        --{build = ':TSUpdate'}rror executing lua [string ":source (no file)"]:5: module 'packer' not found:
-    --)
+	use('sindrets/diffview.nvim')
 
 	-- lsp
     use {
@@ -49,10 +43,16 @@ return require('packer').startup(function(use)
         {'hrsh7th/nvim-cmp'},     -- Required
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
         {'L3MON4D3/LuaSnip'},     -- Required
-    }
-}
+		}
+	}
 
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter',
+     {dependencies =
+		'nvim-treesitter/nvim-treesitter-textobjects'
+     },
+     {build = ':TSUpdate'}
+    )
+
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
 	use({

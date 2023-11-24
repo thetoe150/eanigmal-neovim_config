@@ -1,7 +1,7 @@
 local opts = {noremap = true, silent = true}
-vim.keymap.set("n", "<leader>ef", vim.cmd.Ex)
-vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
 vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
+vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- fold --
 vim.keymap.set("n", "zv", "zr")
@@ -10,8 +10,8 @@ vim.keymap.set("n", "zb", "zm")
 -- reposition window --
 vim.keymap.set("n", "<C-Up>", ":resize -2 <CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2 <CR>", opts)
-vim.keymap.set("n", "<C-Right>", " : vertical resize +2 <CR>", opts)
-vim.keymap.set("n", "<C-Left>", " : vertical resize -2 <CR>", opts)
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2 <CR>", opts)
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2 <CR>", opts)
 
 -- buffer --
 vim.keymap.set({"n", "v"}, "#", "<CS-6>", opts)
@@ -42,8 +42,15 @@ vim.keymap.set("i", "(", "()<ESC>ha", opts);
 vim.keymap.set("i", "\"","\"\"<ESC>ha", opts);
 vim.keymap.set("i", "'", "''<ESC>ha", opts);
 
--- change directory --
-vim.keymap.set({"n", "i"}, "<leader>cd", ":cd %:p:h")
+-- change directory
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", opts)
 
-print("hello from eanigmal - remap file")
+-- copy to system clipboard
+vim.keymap.set("v", "<leader>y", "\"+y", opts)
+vim.keymap.set("n", "<leader>yy", "\"+yy", opts)
 
+-- yank from system clipboard
+vim.keymap.set("n", "<leader>p", "\"+p", opts)
+
+-- copy path of the current file to system clipboard
+vim.keymap.set("n", "<leader>cp", ":let @+ = expand(\"%:p\") <CR>", opts)
