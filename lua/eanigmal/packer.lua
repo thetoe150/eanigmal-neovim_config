@@ -70,19 +70,21 @@ return require('packer').startup(function(use)
 	-- debug
 	-- use('mfussenegger/nvim-dap')
 
-	-- theme
+	use({
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	})
+
+	-- color scheme
 	use({"folke/tokyonight.nvim",
 		as = "tokyonight",
 		config = function()
 			vim.cmd('colorscheme tokyonight-night')
 		end
 	})
-	use({
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" }
-	})
-	-- use("EdenEast/nightfox.nvim")
-	-- use({ 'rose-pine/neovim'})
+	use("EdenEast/nightfox.nvim")
+	use({ 'rose-pine/neovim'})
+	use'navarasu/onedark.nvim'
 	  -- Automatically set up your configuration after cloning packer.nvim
 	  -- Put this at the end after all plugins
 	  if packer_bootstrap then
