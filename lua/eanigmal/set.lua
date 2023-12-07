@@ -10,7 +10,7 @@ vim.opt.expandtab = false
 
 vim.opt.wrap = false
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -25,3 +25,4 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.api.nvim_cmd({cmd = "set", args = {"nofoldenable"}},{})
 
 vim.g.mapleader = " "
+
