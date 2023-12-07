@@ -56,3 +56,15 @@ vim.keymap.set("n", "<leader>p", "\"+p", opts)
 
 -- copy path of the current file to system clipboard
 vim.keymap.set("n", "<leader>cp", ":let @+ = expand(\"%:p\") <CR>", opts)
+
+-- toggle search hightlight
+local function toggleHightlight()
+	-- if vim.opt.hlsearch == true then
+	-- 	vim.opt.hlsearch = false
+	-- else
+	-- 	vim.opt.hlsearch = true
+	-- end
+	vim.cmd("set hlsearch!")
+end
+vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
+

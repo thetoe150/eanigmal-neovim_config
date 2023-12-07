@@ -62,10 +62,10 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
-	-- use({
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = function() vim.fn["mkdp#util#install"]() end,
-	-- })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
 
 	-- debug
 	-- use('mfussenegger/nvim-dap')
