@@ -68,3 +68,6 @@ local function toggleHightlight()
 end
 vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 
+-- terminal
+vim.keymap.set({"n", "v"}, "<leader>t", "<C-w>v:ter<CR><S-a>", opts)
+vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
