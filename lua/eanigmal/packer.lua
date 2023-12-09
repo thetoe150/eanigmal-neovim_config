@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
 	})
 
 	-- debug
-	use('mfussenegger/nvim-dap')
+	-- use('mfussenegger/nvim-dap')
 
 	use({
 		"folke/todo-comments.nvim",
