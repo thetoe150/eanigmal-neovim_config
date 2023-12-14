@@ -44,8 +44,11 @@ vim.keymap.set("i", "(", "()<ESC>ha", opts);
 vim.keymap.set("i", "\"","\"\"<ESC>ha", opts);
 vim.keymap.set("i", "'", "''<ESC>ha", opts);
 
--- change directory
+-- change directory to current working directory
 vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", opts)
+
+-- go back 1 directory
+vim.keymap.set("n", "-", ":cd..<CR>:pwd<CR>", opts)
 
 -- copy to system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y", opts)
@@ -72,3 +75,4 @@ vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 vim.keymap.set({"n", "v"}, "<leader>t", "<C-w>v:ter<CR><S-a>", opts)
 vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
+
