@@ -5,10 +5,6 @@ vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
 vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
--- fold --
-vim.keymap.set("n", "zv", "zr")
-vim.keymap.set("n", "zb", "zm")
-
 -- reposition window --
 vim.keymap.set("n", "<C-Up>", ":resize -2 <CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2 <CR>", opts)

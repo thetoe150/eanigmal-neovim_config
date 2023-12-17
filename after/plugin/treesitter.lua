@@ -30,4 +30,6 @@ require'nvim-treesitter.configs'.setup {
 	indent = {
 		enable = true,
 	},
+	-- vim.api.nvim_set_hl(0, "@comment", {fg="#008000"}),
 }
+
