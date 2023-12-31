@@ -67,3 +67,16 @@ local function toggleHightlight()
 end
 vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 
+-- terminal
+vim.keymap.set({"n", "v"}, "<leader>t", "<C-w>v:ter<CR><S-a>", opts)
+vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
+
+-- wrapline
+local function wrap_line()
+	vim.api.nvim_cmd({cmd = "set", args = {"wrap"}}, {})
+	vim.api.nvim_cmd({cmd = "set", args = {"linebreak"}}, {})
+	vim.api.nvim_cmd({cmd = "set", args = {"breakindent"}}, {})
+end
+
+vim.keymap.set({"n", "v"}, "<leader>b", wrap_line, opts)
