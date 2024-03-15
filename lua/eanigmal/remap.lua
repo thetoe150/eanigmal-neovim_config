@@ -68,7 +68,7 @@ end
 vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 
 -- terminal
-vim.keymap.set({"n", "v"}, "<leader>t", ":tabnew<CR>:ter<CR>", opts)
+vim.keymap.set({"n", "v"}, "<leader>t", ":tabnew<CR>:ter<CR>a", opts)
 vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
 
