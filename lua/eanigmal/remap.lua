@@ -80,3 +80,9 @@ local function wrap_line()
 end
 
 vim.keymap.set({"n", "v"}, "<leader>b", wrap_line, opts)
+
+-- netrw slit mode
+-- vim.keymap.set({"n", "v"}, "<leader>0", function() vim.cmd("let g:netrw_browse_split = 0") end, opts)
+-- vim.keymap.set({"n", "v"}, "<leader>1", function() vim.cmd("let g:netrw_browse_split = 1") end, opts)
+-- vim.keymap.set({"n", "v"}, "<leader>2", function() vim.cmd("let g:netrw_browse_split = 2") end, opts)
+-- vim.keymap.set({"n", "v"}, "<leader>3", function() vim.cmd("let g:netrw_browse_split = 3") end, opts)
