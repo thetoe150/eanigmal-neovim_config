@@ -71,6 +71,8 @@ vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 vim.keymap.set({"n", "v"}, "<leader>t", ":tabnew<CR>:ter<CR>a", opts)
 vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
+-- vim.keymap.set("t", "<leader><Tab>", "<C-\\><C-n>gt", opts)
+-- vim.keymap.set({"n","v"}, "<leader><Tab>", "gt", opts)
 
 -- wrapline
 local function wrap_line()
