@@ -36,4 +36,3 @@ vim.opt.colorcolumn = "96"
 
 
 vim.g.mapleader = " "
-
