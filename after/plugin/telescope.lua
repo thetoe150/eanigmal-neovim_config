@@ -8,20 +8,20 @@ vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch curren
 -- if you on Window and want to be fast, you should install ripgrep.
 -- https://github.com/BurntSushi/ripgrep
 -- After installing ripgrep, telescope automaticly use it to live grep search
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+-- vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+-- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
-vim.keymap.set('n', '<leader>rg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+-- vim.keymap.set('n', '<leader>rg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 require('telescope').setup{
 	defaults = {
 		mappings = {
 			n = {
-				['<leader>db'] = require('telescope.actions').delete_buffer
+				['<leader>z'] = require('telescope.actions').delete_buffer
 			},
 
 			i = {
-				['<leader>db'] = require('telescope.actions').delete_buffer
+				['<leader>z'] = require('telescope.actions').delete_buffer
 			}
 		},
 		-- file_ignore_patterns = {
