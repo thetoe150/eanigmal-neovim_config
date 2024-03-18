@@ -16,8 +16,10 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use {
-		  'nvim-telescope/telescope.nvim', tag = '0.1.4',
-		  requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
+		requires = {
+			{'nvim-lua/plenary.nvim'},
+		}
 	}
 
 	use('mbbill/undotree')
@@ -32,26 +34,19 @@ return require('packer').startup(function(use)
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
             {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+				'williamboman/mason.nvim',
+				run = function()
+					pcall(vim.cmd, 'MasonUpdate')
+				end,
+			},
+			{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},     -- Required
+			{'hrsh7th/cmp-nvim-lsp'}, -- Required
+			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	}
-
-    use('nvim-treesitter/nvim-treesitter',
-     {dependencies =
-		'nvim-treesitter/nvim-treesitter-textobjects'
-     },
-     {build = ':TSUpdate'}
-    )
 
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
@@ -61,23 +56,28 @@ return require('packer').startup(function(use)
 	})
 
 	-- debug
-	use('mfussenegger/nvim-dap')
+	-- use('mfussenegger/nvim-dap')
 
-	-- theme
+	use({
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	})
+
+	-- color scheme
 	use({"folke/tokyonight.nvim",
 		as = "tokyonight",
 		config = function()
 			vim.cmd('colorscheme tokyonight-night')
 		end
 	})
-	use({
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" }
-	})
-	-- use("EdenEast/nightfox.nvim")
-	-- use({ 'rose-pine/neovim'})
+	use("EdenEast/nightfox.nvim")
+	use({ 'rose-pine/neovim'})
+	use'navarasu/onedark.nvim'
 	  -- Automatically set up your configuration after cloning packer.nvim
 	  -- Put this at the end after all plugins
+
+	use('alec-gibson/nvim-tetris')
+
 	  if packer_bootstrap then
 		require('packer').sync()
 	  end
