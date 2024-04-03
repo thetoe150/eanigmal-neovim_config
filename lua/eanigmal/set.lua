@@ -34,5 +34,11 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.colorcolumn = "96"
 
-
 vim.g.mapleader = " "
+
+vim.filetype.add{
+	extension = {
+		jshader = "cpp",
+		ijshader = "cpp",
+	}
+}
