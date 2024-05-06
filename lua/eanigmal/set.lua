@@ -40,5 +40,8 @@ vim.filetype.add{
 	extension = {
 		jshader = "cpp",
 		ijshader = "cpp",
+		frag = "cpp",
+		comp = "cpp",
+		vert = "cpp",
 	}
 }
