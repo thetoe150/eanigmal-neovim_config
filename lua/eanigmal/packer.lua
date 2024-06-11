@@ -84,7 +84,9 @@ return require('packer').startup(function(use)
 	  -- Automatically set up your configuration after cloning packer.nvim
 	  -- Put this at the end after all plugins
 
-	use('alec-gibson/nvim-tetris')
+	use('rbong/vim-flog')
+
+	-- use('alec-gibson/nvim-tetris')
 
 	  if packer_bootstrap then
 		require('packer').sync()

@@ -83,6 +83,8 @@ end
 
 vim.keymap.set({"n", "v"}, "<leader>b", wrap_line, opts)
 
+vim.keymap.set({"n", "v"}, "<leader>o", ":copen<CR>", opts)
+
 -- netrw slit mode
 -- vim.keymap.set({"n", "v"}, "<leader>0", function() vim.cmd("let g:netrw_browse_split = 0") end, opts)
 -- vim.keymap.set({"n", "v"}, "<leader>1", function() vim.cmd("let g:netrw_browse_split = 1") end, opts)
