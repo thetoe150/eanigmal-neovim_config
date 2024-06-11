@@ -15,10 +15,9 @@ vim.opt.incsearch = true
 
 -- terminal
 vim.opt.termguicolors = true
-vim.cmd("set shell=powershell")
-vim.cmd("set shellcmdflag=-command")
-vim.cmd("set shellquote=\"")
-vim.cmd("set shellxquote=")
+
+-- run :h 'shell' to see more
+vim.cmd("let &shell = executable('pwsh') ? 'pwsh' : 'powershell'")
 -- let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
 -- let &shellquote   = ''
 -- let &shellpipe    = '| Out-File -Encoding UTF8 %s'
@@ -43,5 +42,10 @@ vim.filetype.add{
 		frag = "cpp",
 		comp = "cpp",
 		vert = "cpp",
+		scriptdef = "cpp",
+		def = "cpp",
+		claradb = "json",
+		config = "json",
+		postfx = "json",
 	}
 }
