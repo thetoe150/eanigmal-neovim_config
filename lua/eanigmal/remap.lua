@@ -12,9 +12,9 @@ vim.keymap.set("n", "<C-Right>", " : vertical resize +2 <CR>", opts)
 vim.keymap.set("n", "<C-Left>", " : vertical resize -2 <CR>", opts)
 
 -- buffer --
-vim.keymap.set({"n", "v"}, "#", "<CS-6>", opts)
--- vim.keymap.set({"n", "v"}, "^", ":bprevious <CR>", opts)
--- vim.keymap.set({"n", "v"}, "$", ":bnext <CR>", opts)
+vim.keymap.set({"n", "v"}, "<leader>s", "<CS-6>", opts)
+vim.keymap.set({"n", "v"}, "^", ":bprevious <CR>", opts)
+vim.keymap.set({"n", "v"}, "$", ":bnext <CR>", opts)
 -- vim.keymap.set({"n", "v"}, "^", ":enew <CR>", opts) -- new buffer in new file
 -- vim.keymap.set({"n", "v"}, "$", ":bd <CR>", opts) -- delete buffer
 
