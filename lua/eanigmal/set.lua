@@ -40,13 +40,14 @@ vim.filetype.add{
 	extension = {
 		jshader = "cpp",
 		ijshader = "cpp",
-		frag = "cpp",
-		comp = "cpp",
-		vert = "cpp",
+		frag = "glsl",
+		comp = "glsl",
+		vert = "glsl",
 		scriptdef = "cpp",
 		def = "cpp",
 		claradb = "json",
 		config = "json",
 		postfx = "json",
+		gltf = "json",
 	}
 }
