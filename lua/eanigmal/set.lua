@@ -18,6 +18,7 @@ vim.opt.termguicolors = true
 
 -- run :h 'shell' to see more
 vim.cmd("let &shell = executable('pwsh') ? 'pwsh' : 'powershell'")
+-- vim.cmd("let &shell = 'powershell'")
 -- let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
 -- let &shellquote   = ''
 -- let &shellpipe    = '| Out-File -Encoding UTF8 %s'
