@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2 <CR>", opts)
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2 <CR>", opts)
 
 -- buffer --
-vim.keymap.set({"n", "v"}, "#", "<CS-6>", opts)
+vim.keymap.set({"n", "v"}, "<leader>s", "<CS-6>", opts)
 vim.keymap.set({"n", "v"}, "^", ":bprevious <CR>", opts)
 vim.keymap.set({"n", "v"}, "$", ":bnext <CR>", opts)
 -- vim.keymap.set({"n", "v"}, "^", ":enew <CR>", opts) -- new buffer in new file
@@ -82,6 +82,8 @@ local function wrap_line()
 end
 
 vim.keymap.set({"n", "v"}, "<leader>b", wrap_line, opts)
+
+vim.keymap.set({"n", "v"}, "<leader>o", ":copen<CR>", opts)
 
 -- netrw slit mode
 -- vim.keymap.set({"n", "v"}, "<leader>0", function() vim.cmd("let g:netrw_browse_split = 0") end, opts)
