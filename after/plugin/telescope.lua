@@ -1,6 +1,5 @@
 local builtin = require('telescope.builtin')
 local opts = { noremap = true, silent = true}
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 vim.keymap.set('n', '<leader>d', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 -- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
@@ -53,4 +52,10 @@ vim.keymap.set('n', '<leader>g', ':Telescope live_grep<cr>', opts)
 vim.keymap.set('v', '<leader>g', function()
 									local text = vim.getVisualSelection()
 									builtin.live_grep({default_text = text})
+								end, opts)
+
+vim.keymap.set('n', '<leader>f', ':Telescope find_files<cr>', opts)
+vim.keymap.set('v', '<leader>f', function()
+									local text = vim.getVisualSelection()
+									builtin.find_files({default_text = text})
 								end, opts)
