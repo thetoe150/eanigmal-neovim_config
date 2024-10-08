@@ -85,6 +85,7 @@ return require('packer').startup(function(use)
 	  -- Put this at the end after all plugins
 
 	use('rbong/vim-flog')
+	use('LunarVim/bigfile.nvim')
 
 	-- use('alec-gibson/nvim-tetris')
 
