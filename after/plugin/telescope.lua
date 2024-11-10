@@ -2,6 +2,7 @@ local builtin = require('telescope.builtin')
 local opts = { noremap = true, silent = true}
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 vim.keymap.set('n', '<leader>d', builtin.buffers, {})
+vim.keymap.set('n', '<leader>D', ":Telescope buffers sort_lastused=true sort_mru=true<CR>", {})
 -- vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 -- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 
