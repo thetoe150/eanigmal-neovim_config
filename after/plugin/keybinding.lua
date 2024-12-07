@@ -78,7 +78,7 @@ vim.keymap.set('v', '<leader>G', function()
 								end, opts)
 
 
-vim.keymap.set({'n', 'i'}, '<leader>z', function()
+vim.keymap.set({'n'}, '<leader>z', function()
 											actions.delete_buffer()
 										end, opts)
 
