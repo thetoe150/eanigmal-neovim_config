@@ -1,4 +1,3 @@
--- color = color or "rose-pine"
 require('onedark').setup  {
 	-- Main options --
 	style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
@@ -46,13 +45,7 @@ require('onedark').setup  {
 	--     background = true,    -- use background color for virtual text
 	-- },
 }
-
 require('onedark').load()
--- color = color or "onedark"
--- vim.cmd.colorscheme(color)
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none"  })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none"  })
--- vim.api.nvim_set_hl(0, "@comment", {fg = "#008000"})
-
--- ColorMyPencils()

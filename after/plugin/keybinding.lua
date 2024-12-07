@@ -1,32 +1,27 @@
+-- lsp
+local lsp = require("lsp-zero")
+lsp.on_attach(function(client, bufnr)
+	local opts = {buffer = bufnr, remap = false}
+
+	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+	vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+end)
+
+lsp.preset("recommended")
+
+-- telescope
 local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
+
 local opts = { noremap = true, silent = true}
--- vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
--- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-
--- if you on Window and want to be fast, you should install ripgrep.
--- https://github.com/BurntSushi/ripgrep
--- After installing ripgrep, telescope automaticly use it to live grep search
--- vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
--- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-
--- vim.keymap.set('n', '<leader>rg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-
-require('telescope').setup{
-	defaults = {
-		mappings = {
-			n = {
-				['<leader>z'] = require('telescope.actions').delete_buffer
-			},
-
-			i = {
-				['<leader>z'] = require('telescope.actions').delete_buffer
-			}
-		},
-		-- file_ignore_patterns = {
-		-- 	"node_modules"
-		-- }
-	}
-}
 
 function vim.toogleFile()
 	local filename = vim.fn.expand('%:t')
@@ -81,3 +76,10 @@ vim.keymap.set('v', '<leader>G', function()
 									local text = vim.getVisualSelection()
 									builtin.current_buffer_fuzzy_find({default_text = text})
 								end, opts)
+
+
+vim.keymap.set({'n', 'i'}, '<leader>z', function()
+											actions.delete_buffer()
+										end, opts)
+
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)

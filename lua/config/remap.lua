@@ -1,22 +1,11 @@
 local opts = {noremap = true, silent = true}
 
--- most used map --
-vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
-vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
+vim.keymap.set({'n', 'v'}, "<leader>q", ":q<CR>")
+vim.keymap.set({'n', 'v'}, "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
--- reposition window --
-vim.keymap.set("n", "<C-Up>", ":resize -2 <CR>", opts)
-vim.keymap.set("n", "<C-Down>", ":resize +2 <CR>", opts)
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2 <CR>", opts)
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2 <CR>", opts)
-
--- buffer --
+-- buffer
 vim.keymap.set({"n", "v"}, "<leader>s", "<CS-6>", opts)
-vim.keymap.set({"n", "v"}, "^", ":bprevious <CR>", opts)
-vim.keymap.set({"n", "v"}, "$", ":bnext <CR>", opts)
--- vim.keymap.set({"n", "v"}, "^", ":enew <CR>", opts) -- new buffer in new file
--- vim.keymap.set({"n", "v"}, "$", ":bd <CR>", opts) -- delete buffer
 
 -- motion --
 vim.keymap.set({"n", "v"}, "s", "^", opts)
@@ -50,11 +39,8 @@ vim.keymap.set("n", "-", ":cd..<CR>:pwd<CR>", opts)
 vim.keymap.set("v", "<leader>y", "\"+y", opts)
 vim.keymap.set("n", "<leader>yy", "\"+yy", opts)
 
--- yank from system clipboard
+-- paste from system clipboard
 vim.keymap.set("n", "<leader>p", "\"+p", opts)
-
--- copy path of the current file to system clipboard
-vim.keymap.set("n", "<leader>cp", ":let @+ = expand(\"%:p\") <CR>", opts)
 
 -- toggle search hightlight
 local function toggleHightlight()
@@ -74,6 +60,8 @@ vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
 -- vim.keymap.set("t", "<leader><Tab>", "<C-\\><C-n>gt", opts)
 -- vim.keymap.set({"n","v"}, "<leader><Tab>", "gt", opts)
 
+vim.keymap.set({"n", "v"}, "<leader>o", ":copen<CR>", opts)
+
 -- wrapline
 local function wrap_line()
 	vim.api.nvim_cmd({cmd = "set", args = {"wrap"}}, {})
@@ -83,10 +71,6 @@ end
 
 vim.keymap.set({"n", "v"}, "<leader>b", wrap_line, opts)
 
-vim.keymap.set({"n", "v"}, "<leader>o", ":copen<CR>", opts)
-
 -- netrw slit mode
 -- vim.keymap.set({"n", "v"}, "<leader>0", function() vim.cmd("let g:netrw_browse_split = 0") end, opts)
 -- vim.keymap.set({"n", "v"}, "<leader>1", function() vim.cmd("let g:netrw_browse_split = 1") end, opts)
--- vim.keymap.set({"n", "v"}, "<leader>2", function() vim.cmd("let g:netrw_browse_split = 2") end, opts)
--- vim.keymap.set({"n", "v"}, "<leader>3", function() vim.cmd("let g:netrw_browse_split = 3") end, opts)
