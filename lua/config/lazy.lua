@@ -50,5 +50,3 @@ require("lazy").setup({
 	-- 	},
 	-- },
 })
--- lualine
--- indent-blankline
