@@ -2,7 +2,8 @@ local opts = {noremap = true, silent = true}
 
 vim.keymap.set({'n', 'v'}, "<leader>q", ":q<CR>")
 vim.keymap.set({'n', 'v'}, "<leader>w", ":w<CR>")
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", ":Oil<CR>")
 
 -- buffer
 vim.keymap.set({"n", "v"}, "<leader>s", "<CS-6>", opts)
@@ -54,9 +55,19 @@ end
 vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 
 -- terminal
-vim.keymap.set({"n", "v"}, "<leader>t", ":tabnew<CR>:ter<CR>a", opts)
+vim.keymap.set({"n", "v"}, "<leader>T", ":tabnew<CR>:ter<CR>a", opts)
+vim.keymap.set({"n", "v"}, "<leader>t", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 5)
+end)
+
+-- tab
+vim.keymap.set({"n", "i"}, "gr", "gT", opts)
+
 vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
-vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
+-- vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
 -- vim.keymap.set("t", "<leader><Tab>", "<C-\\><C-n>gt", opts)
 -- vim.keymap.set({"n","v"}, "<leader><Tab>", "gt", opts)
 
