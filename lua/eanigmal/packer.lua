@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   -- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-
+	use 'nvim-treesitter/nvim-treesitter'
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = {
@@ -87,6 +87,14 @@ return require('packer').startup(function(use)
 	use('rbong/vim-flog')
 	use('LunarVim/bigfile.nvim')
 	use("lukas-reineke/indent-blankline.nvim")
+
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	-- use('alec-gibson/nvim-tetris')
 
