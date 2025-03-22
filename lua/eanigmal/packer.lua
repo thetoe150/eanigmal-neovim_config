@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   -- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-
+	use 'nvim-treesitter/nvim-treesitter'
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = {
@@ -77,6 +77,14 @@ return require('packer').startup(function(use)
 	  -- Put this at the end after all plugins
 
 	use('rbong/vim-flog')
+
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	-- use('alec-gibson/nvim-tetris')
 
