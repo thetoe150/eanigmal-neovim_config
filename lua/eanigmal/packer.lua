@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	use('nvim-treesitter/nvim-treesitter')
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
 	use({
@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
 
 	use('rbong/vim-flog')
 	use('LunarVim/bigfile.nvim')
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- use('alec-gibson/nvim-tetris')
 
