@@ -55,7 +55,6 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use('nvim-treesitter/nvim-treesitter')
 	use 'nvim-treesitter/playground'
 	-- install without yarn or npm
 	use({
@@ -88,13 +87,13 @@ return require('packer').startup(function(use)
 	use('LunarVim/bigfile.nvim')
 	use("lukas-reineke/indent-blankline.nvim")
 
-	use({
-		"kdheepak/lazygit.nvim",
-		-- optional for floating window border decoration
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
-	})
+	-- use({
+	-- 	"kdheepak/lazygit.nvim",
+	-- 	-- optional for floating window border decoration
+	-- 	requires = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- })
 
 	-- use('alec-gibson/nvim-tetris')
 
