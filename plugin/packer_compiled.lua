@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
@@ -128,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-tetris"] = {
-    loaded = true,
-    path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tetris",
-    url = "https://github.com/alec-gibson/nvim-tetris"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -179,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-flog"] = {
+    loaded = true,
+    path = "C:\\Users\\theto\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-flog",
+    url = "https://github.com/rbong/vim-flog"
   },
   ["vim-fugitive"] = {
     loaded = true,
