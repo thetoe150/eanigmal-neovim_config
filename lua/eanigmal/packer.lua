@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
 	use('rbong/vim-flog')
 	use('LunarVim/bigfile.nvim')
 	use("lukas-reineke/indent-blankline.nvim")
+	use( "stevearc/oil.nvim")
 
 	-- use({
 	-- 	"kdheepak/lazygit.nvim",
@@ -101,4 +102,3 @@ return require('packer').startup(function(use)
 		require('packer').sync()
 	  end
   end)
-  
