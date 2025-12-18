@@ -13,6 +13,11 @@ vim.opt.wrap = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- tab
+-- vim.cmd("set guitablabel=[%N] %t %M")
+-- vim.cmd("set guitablabel=%t")
+vim.api.nvim_cmd({cmd = "set", args = {"guitablabel=\\[%N\\]\\ %t\\ %M"}},{})
+
 -- terminal
 vim.opt.termguicolors = true
 
