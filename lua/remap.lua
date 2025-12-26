@@ -1,29 +1,12 @@
 local opts = {noremap = true, silent = true}
 
--- most used map --
-vim.keymap.set({"n", "v"}, "<leader>q", ":q<CR>")
-vim.keymap.set({"n", "v"}, "<leader>w", ":w<CR>")
+vim.keymap.set({'n', 'v'}, "<leader>q", ":q<CR>")
+vim.keymap.set({'n', 'v'}, "<leader>w", ":w<CR>")
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>e", ":Oil<CR>")
 
 -- buffer
 vim.keymap.set({"n", "v"}, "<leader>s", "<CS-6>", opts)
-
--- tab --
-vim.keymap.set({"n"}, "t", "gt", opts)
-vim.keymap.set({"n"}, "T", "gT", opts)
-vim.keymap.set({"n"}, "t", "gt", opts)
-vim.keymap.set({"n"}, "T", "gT", opts)
-
-vim.keymap.set({"n"}, "1t", "1gt", opts)
-vim.keymap.set({"n"}, "2t", "2gt", opts)
-vim.keymap.set({"n"}, "3t", "3gt", opts)
-vim.keymap.set({"n"}, "4t", "4gt", opts)
-vim.keymap.set({"n"}, "5t", "5gt", opts)
-vim.keymap.set({"n"}, "6t", "6gt", opts)
-vim.keymap.set({"n"}, "7t", "7gt", opts)
-vim.keymap.set({"n"}, "8t", "8gt", opts)
-vim.keymap.set({"n"}, "9t", "9gt", opts)
 
 -- motion --
 vim.keymap.set({"n", "v"}, "s", "^", opts)
@@ -72,8 +55,8 @@ end
 vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 
 -- terminal
-vim.keymap.set({"n", "v"}, "<leader>T", ":tabnew<CR>:ter<CR>a", opts)
-vim.keymap.set({"n", "v"}, "<leader>t", function()
+vim.keymap.set({"n", "v"}, "<leader>t", ":tabnew<CR>:ter<CR>a", opts)
+vim.keymap.set({"n", "v"}, "<leader>T", function()
 	vim.cmd.vnew()
 	vim.cmd.term()
 	vim.cmd.wincmd("J")
@@ -81,7 +64,20 @@ vim.keymap.set({"n", "v"}, "<leader>t", function()
 end)
 
 -- tab
-vim.keymap.set({"n", "i"}, "gr", "gT", opts)
+vim.keymap.set({"n"}, "t", "gt", opts)
+vim.keymap.set({"n"}, "T", "gT", opts)
+vim.keymap.set({"n"}, "t", "gt", opts)
+vim.keymap.set({"n"}, "T", "gT", opts)
+
+vim.keymap.set({"n"}, "1t", "1gt", opts)
+vim.keymap.set({"n"}, "2t", "2gt", opts)
+vim.keymap.set({"n"}, "3t", "3gt", opts)
+vim.keymap.set({"n"}, "4t", "4gt", opts)
+vim.keymap.set({"n"}, "5t", "5gt", opts)
+vim.keymap.set({"n"}, "6t", "6gt", opts)
+vim.keymap.set({"n"}, "7t", "7gt", opts)
+vim.keymap.set({"n"}, "8t", "8gt", opts)
+vim.keymap.set({"n"}, "9t", "9gt", opts)
 
 vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
 -- vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
@@ -98,12 +94,6 @@ local function wrap_line()
 end
 
 vim.keymap.set({"n", "v"}, "<leader>b", wrap_line, opts)
-
-vim.keymap.set({"n"}, "<leader>o", ":copen<CR>", opts)
-vim.keymap.set({"n"}, "<leader>u", ":cp<CR>", opts)
-vim.keymap.set({"n"}, "<leader>i", ":cn<CR>", opts)
-
-vim.keymap.set({"n", "v"}, "gr", "gT", opts)
 
 -- netrw slit mode
 -- vim.keymap.set({"n", "v"}, "<leader>0", function() vim.cmd("let g:netrw_browse_split = 0") end, opts)
