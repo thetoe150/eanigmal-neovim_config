@@ -7,25 +7,17 @@
 
 return {
 	{
-		'nvim-treesitter/playground'
-	},
+		'nvim-treesitter/nvim-treesitter',
+		lazy = false,
+		build = ':TSUpdate',
 
-	{
-		"nvim-treesitter/nvim-treesitter",
 		config = function ()
-			require'nvim-treesitter.configs'.setup {
-				ensure_installed = { "c", "cpp", "lua", "python", "vim", "vimdoc", "query", "markdown" },
-				sync_install = false,
-				auto_install = true,
-				ignore_install = { "javascript" },
-				highlight = {
-					enable = true,
-				},
-				indent = {
-					enable = true,
-				},
-				-- vim.api.nvim_set_hl(0, "@comment", {fg="#008000"}),
+			local ts = require'nvim-treesitter'
+			ts.setup {
+				-- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
 			}
+			ts.install { 'cpp', 'c', 'lua', 'python' }
+
 		end
 	},
 }

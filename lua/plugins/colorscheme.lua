@@ -3,4 +3,3 @@ return {
 		'navarasu/onedark.nvim'
 	},
 }
-
