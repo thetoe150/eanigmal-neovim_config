@@ -55,6 +55,11 @@ end
 vim.keymap.set({"n", "v"}, "<leader>n", toggleHightlight, opts)
 
 -- terminal
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", opts)
+-- vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
+-- vim.keymap.set("t", "<leader><Tab>", "<C-\\><C-n>gt", opts)
+-- vim.keymap.set({"n","v"}, "<leader><Tab>", "gt", opts)
+
 vim.keymap.set({"n", "v"}, "<leader>t", ":tabnew<CR>:ter<CR>a", opts)
 vim.keymap.set({"n", "v"}, "<leader>T", function()
 	vim.cmd.vnew()
@@ -78,11 +83,6 @@ vim.keymap.set({"n"}, "6t", "6gt", opts)
 vim.keymap.set({"n"}, "7t", "7gt", opts)
 vim.keymap.set({"n"}, "8t", "8gt", opts)
 vim.keymap.set({"n"}, "9t", "9gt", opts)
-
-vim.keymap.set("t", "<C-n>", "<C-\\><C-n>", opts)
--- vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", opts)
--- vim.keymap.set("t", "<leader><Tab>", "<C-\\><C-n>gt", opts)
--- vim.keymap.set({"n","v"}, "<leader><Tab>", "gt", opts)
 
 vim.keymap.set({"n", "v"}, "<leader>o", ":copen<CR>", opts)
 
