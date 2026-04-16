@@ -33,4 +33,5 @@ print(art)
 
 require "set"
 require "remap"
+require "lsp.lsp"
 require "lazy.lazy"
